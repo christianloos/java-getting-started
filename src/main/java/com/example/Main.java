@@ -35,7 +35,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 @Controller
-@SpringBootApplication
+//@SpringBootApplication
 public class Main {
 
   @Value("${spring.datasource.url}")
@@ -83,6 +83,13 @@ public class Main {
       config.setJdbcUrl(dbUrl);
       return new HikariDataSource(config);
     }
+  }
+
+
+  // conexion con servidor
+  private static Connection getConnection() throws URISyntaxException, SQLException {
+    String dbUrl = System.getenv("postgres://gbocaaqoijktew:9e1e0ab920fe289bdf1ab8dda55b8f947cee83fa322dfff4ed112a5f8ee0d312@ec2-54-164-241-193.compute-1.amazonaws.com:5432/d4roboome8706e");
+    return DriverManager.getConnection(dbUrl);
   }
 
 }
