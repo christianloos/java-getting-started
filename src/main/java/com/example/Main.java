@@ -45,9 +45,12 @@ public class Main {
   private DataSource dataSource;
 
   public static void main(String[] args) throws Exception {
-    SpringApplication.run(Main.class, args);
+    //SpringApplication.run(Main.class, args);
+    System.out.println("Hello There");
+
   }
 
+  /*
   @RequestMapping("/")
   String index() {
     return "index";
@@ -84,6 +87,9 @@ public class Main {
       return new HikariDataSource(config);
     }
   }
+  */
+
+  
 
 
   // conexion con servidor
